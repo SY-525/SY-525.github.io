@@ -5,58 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Michelle Shen</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
       background-color: #fef9e7; /* light yellow */
-      color: #569458; /* dark green for text */
-    }
-    header {
-      background-color: #569458; /* bright green */
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-    }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      color: #1a3300;
-      border-bottom: 2px solid #2ecc71;
-      padding-bottom: 0.3rem;
+      color: #2e4600; /* dark green text */
+      line-height: 1.6;
     }
     a {
-      color: #27ae60; /* darker green */
+      color: #27ae60;
       text-decoration: none;
-      font-weight: bold;
     }
     a:hover {
       text-decoration: underline;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    /* Header Section */
+    header {
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      animation: fadeIn 2s ease-in-out;
     }
-    li {
-      margin: 0.5rem 0;
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Profile Section */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    .profile img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #27ae60;
+      margin-bottom: 1rem;
+    }
+    .profile h2 {
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      color: #1a3300;
+    }
+    .profile p {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* Project Section */
+    .projects {
+      padding: 3rem 1rem;
+      background-color: #ecf9f1;
+    }
+    .projects h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #1a3300;
+    }
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .project-info {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .project-info h3 {
+      margin-bottom: 0.8rem;
+      color: #27ae60;
+    }
+    .project-info p {
+      margin-bottom: 1rem;
+    }
+    .project-info a {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background: #27ae60;
+      color: white;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .project-info a:hover {
+      background: #1e8449;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1a3300;
+    }
+    .contact p {
+      margin-bottom: 1rem;
+    }
+    .contact a {
+      font-weight: bold;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #2ecc71;
+      background-color: #27ae60;
       color: white;
+      padding: 1rem;
       margin-top: 2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .project {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -66,19 +166,45 @@
     <p>High school student passionate about robotics, automation system, and sustainable technology.</p>
   </header>
 
-  <section>
-    <h2>📂 Projects</h2>
-    <ul>
-      <li><a href="https://github.com/your-username/screen-blocker">Screen Blocker App</a></li>
-      <li><a href="https://github.com/your-username/textile-identifier">Textile Identifier Software</a></li>
-    </ul>
+  <section class="profile">
+    <img src="profile.jpg" alt="Profile Picture">
+    <h2>About Me</h2>
+    <p>
+      I enjoy combining engineering, coding, and biology to solve sustainability challenges. 
+      From robotics competitions to biotech research, I build projects that bring ideas to life.
+    </p>
   </section>
 
-  <section>
-    <h2>🌐 Connect</h2>
+  <section class="projects">
+    <h2>Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project">
+      <img src="screen-blocker-demo.png" alt="Screen Blocker Demo">
+      <div class="project-info">
+        <h3>Screen Blocker App 🐱</h3>
+        <p>An Electron app that spawns animated cats to block distractions when I visit entertainment sites. Helps me stay focused and productive.</p>
+        <a href="https://github.com/your-username/screen-blocker" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project">
+      <img src="textile-identifier-demo.png" alt="Textile Identifier Demo">
+      <div class="project-info">
+        <h3>Textile Identifier Software 👕</h3>
+        <p>A tool that uses AI to analyze images of fabrics and classify them (e.g., cotton, polyester, acetate). Supports sustainable recycling workflows.</p>
+        <a href="https://github.com/your-username/textile-identifier" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect! You can reach me at:</p>
     <p>
-      <a href="https://github.com/your-username">GitHub</a> | 
-      <a href="mailto:youremail@example.com">Email</a>
+      📧 <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+      🌐 <a href="https://github.com/your-username" target="_blank">GitHub</a>
     </p>
   </section>
 
