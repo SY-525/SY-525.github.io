@@ -358,6 +358,41 @@
       backdrop-filter: blur(10px);
     }
 
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(134, 168, 147, 0.3);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+      font-size: 1.2rem;
+      color: #2d4a3a;
+      backdrop-filter: blur(10px);
+    }
+
+    .carousel-nav:hover {
+      background: linear-gradient(135deg, rgba(253, 253, 150, 0.9), rgba(134, 168, 147, 0.8));
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 5px 15px rgba(134, 168, 147, 0.4);
+      border-color: rgba(253, 253, 150, 0.5);
+    }
+
+    .carousel-prev {
+      left: 10px;
+    }
+
+    .carousel-next {
+      right: 10px;
+    }
+
     .carousel-track {
       display: flex;
       transition: transform 0.5s ease;
@@ -635,6 +670,8 @@
       
       <div class="carousel-container">
         <div class="carousel">
+          <button class="carousel-nav carousel-prev">‹</button>
+          <button class="carousel-nav carousel-next">›</button>
           <div class="carousel-track">
             <div class="carousel-slide">
               <img src="doggy1.jpg" alt="IKEA dog plush inspiration" class="carousel-image">
